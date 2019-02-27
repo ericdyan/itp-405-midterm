@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/about', function () {
-  return view('welcome');
-});
+Route::get('/artists', 'ArtistsController@index');
+Route::get('/artists/{id}/albums', 'ArtistsController@albums');
+Route::get('/albums/{id}/reviews', 'AlbumsController@index');
+
+
+Route::get('/albums/{id}/reviews/new', 'AlbumsController@create');
+Route::post('/albums/{id}/reviews', 'AlbumsController@store');
